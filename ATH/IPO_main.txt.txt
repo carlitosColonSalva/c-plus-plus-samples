@@ -1,0 +1,38 @@
+Input
+	account_number
+	pin
+	transaction_type
+	money_quantity
+	checking_account
+	savings_account
+	another_transaction
+	admin_pin
+Process
+	do
+		read account_number
+		if account_number = *#999
+			// ask for admin password and call admin
+		else
+			while try_pin > 0 AND pin_correct = false
+				read Pin
+				if pin = right_pin
+					pin_correct = true
+				else
+					// message wrong pin you have & try_pin & tries left
+					try_pin = try_pin - 1
+				endif
+			endwhile
+			
+			if	pin_correct = true
+				// ask for transaction type
+			else
+				// wrong_pin error try with another account
+				// exit
+			endif
+		endif
+	while another_transaction = true
+	
+Output
+	// Transactions
+	// Accounts
+	// Balances for checking and savings

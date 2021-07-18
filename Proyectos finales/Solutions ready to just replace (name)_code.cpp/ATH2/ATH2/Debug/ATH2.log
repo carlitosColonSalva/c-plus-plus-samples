@@ -1,0 +1,13 @@
+﻿Build started 12/9/2013 2:28:03 PM.
+     1>Project "E:\Desktop\_Files\personal\_Homework\clases\c++\Proyectos finales\Solutions ready to just replace (name)_code.cpp\ATH2\ATH2\ATH2.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\ATH2.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ATH2_code.cpp
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Platforms\Win32\Microsoft.Cpp.Win32.Targets(153,5): error MSB6003: The specified task executable "CL.exe" could not be run. There is not enough space on the disk.
+C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Platforms\Win32\Microsoft.Cpp.Win32.Targets(153,5): error MSB6003: 
+     1>Done Building Project "E:\Desktop\_Files\personal\_Homework\clases\c++\Proyectos finales\Solutions ready to just replace (name)_code.cpp\ATH2\ATH2\ATH2.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.28

@@ -1,0 +1,100 @@
+ipo chart:
+
+
+
+
+input:
+char getcard
+
+
+processes:
+
+
+p1_num1 = GetRand()
+p1_num2 = GetRand()
+
+
+p1_result = p1_num1 + p1_num2
+
+read getcard
+
+repeat while getcard ='Y'
+	read getcard;
+	p1_result = p1_result + GetRand()
+endwhile
+
+
+
+
+p2_num1 = GetRand()
+p2_num2 = GetRand()
+p2_num3 = GetRand()
+p2_result = p2_num1 + p2_num2 + p2_num3
+
+
+
+
+
+
+
+
+if p1_result > 21 AND p2_result > 21 then
+	print "both lost"
+else
+	if p1_result > 21 AND p2_result <= 21  then
+	
+		print "p2 won by default. p1 sunk"	
+	else
+	
+		if p1_result <= 21 AND p2_result > 21 then
+			print "p1 won by default. p2 sunk"
+		else
+			if p1_result > p2_result then
+				print "player 1 won"
+			else
+				if p2_result > p1_result then
+					print "player 2 won"
+				else
+					print "TIED Game"
+				endif
+			endif
+		endif
+	endif
+endif
+
+
+
+output:
+
+print "You currently have " + p1_result  " points"
+
+print  "want to get another card?"
+print  "Your last score is " + p1_result
+
+
+print endl << "The last score of the rival is " + p2_result
+
+
+	print "both lost"
+	
+	
+	print "p2 won by default. p1 sunk"	
+	print "p1 won by default. p2 sunk"
+	print "player 1 won"
+	print "player 2 won"
+	print "TIED Game"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

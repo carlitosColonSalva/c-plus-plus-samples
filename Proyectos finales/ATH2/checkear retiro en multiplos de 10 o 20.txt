@@ -1,0 +1,21 @@
+double check_bills(double account_balance)
+{
+
+double how_much = 0;
+bool can_be_used = false;
+
+while(can_be_used = false)
+{
+
+	cout << "HOW MUCH WILL YOU WITHDRAW? : ";
+	cin >> how_much;
+
+	if (how_much >= account_balance) 
+		{ cout << "NOT ENOUGH CASH FOR THAT TRANSACTION"; }
+	else {
+		for (int count = 10; count <= account_balance; count += 10) {
+			if (count == how_much)
+				{ can_be_used = true; }
+}}}				
+return how_much;
+} // end of check_bills()

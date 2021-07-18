@@ -1,0 +1,52 @@
+se hace un do while:
+se entra la informacion del cerdo
+se llama una funcion booleana con nombre InformacionCorrecta(tipo,peso,largo)
+mientras la InformacionCorrecta sea igual a no se repite el do while
+se termina el do while
+
+
+bool InformacionCorrecta(); // se declara la funcion
+
+bool InformacionCorrecta(tipo, peso, largo)
+{
+// las limataciones de la tabla 	entrarlas en variables constantes
+// hacer un array para los tipos de cerdo   
+const double peso_menos_posible[3] = {};
+const double peso_mas_posible[3];
+// .
+// ..
+// ...
+// etc..
+
+// para cuando vaya a evaluar la informacion del cerdo entrada pueda poner:
+if  (peso_actual_cerdo    >=  peso_menos_posible_tipo(numero entrado) 	  and	 peso_actual_cerdo  <=   peso_mas_posible_tipo(numero_entrado))
+{}
+
+
+						
+
+
+
+
+
+
+
+
+return
+}
+
+
+
+
+
+
+
+
+
+
+	para que persona seleccione la apariencia se hace una funcion
+	en esta funcion se entra un numero y devuelve un string:
+
+
+		string GetApariencia() // declaracion de la funcion		
+

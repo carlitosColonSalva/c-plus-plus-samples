@@ -1,0 +1,29 @@
+brainstorm:
+
+
+
+
+cada carta se guarda en un array
+
+
+
+hacer proceso de coger carta
+
+
+
+
+casi al final:
+hacer proceso evaluar todas las cartas de persona una por una, si alguna es una A, preguntar el valor que le quiere asignar es 1 o 11.
+
+
+
+hacer proceso de rival:
+rival coge 2 pero solo se muestra 1
+despues que persona termina de pedir cartas y se queda se muestra el valor de la segunda carta de rival.
+hacer AI de rival:
+se evalua el valor de rival:  si es menor de 17, si es menor que persona, pide una carta.
+
+
+
+
+

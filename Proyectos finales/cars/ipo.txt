@@ -1,0 +1,274 @@
+input
+	
+	
+process
+		int main()
+{
+int menu
+
+clear()
+Print "WELCOME TO RACING" & endl
+Print "PRESS ENTER TO START" & endl
+pausey()
+// delay here
+
+do{
+clear()
+Print "ENTER 1 TO RACE, 2 TO UPGRADE CAR, 3 TO RESET GAME, 0 TO EXIT" & endl
+Print "WANT TO RACE OR UPGRADE CAR?:  "
+
+Read menu
+
+switch(menu)
+{
+case 1:
+Print "PRESS ENTER TO START RACE"
+pausey()
+race(points())
+break
+
+case 2:
+upgrade(points())
+break
+
+case 3:
+reset()
+break
+
+case 0:
+Print "BYE" & endl
+break
+
+default:
+Print "WRONG SELECTION" & endl
+
+}
+
+} while (menu != 0)
+pausey()
+return 0
+} // end of main()
+
+
+
+void delay()
+void spaces_before_car(int)
+void race(double)
+
+
+
+void race(double cash)
+{
+
+int car_position = 0
+int car2_position = 0
+  
+int level = upgrade_level()
+int level_car2 = GetRand(1,12) 
+
+  while (car_position < 50 && car2_position < 50)
+{
+
+
+car_position += GetRand(1,level)
+car2_position += GetRand(1,level_car2)
+
+
+
+
+ for (int z = 0 z <= 5 z++)  //? draw endline before drawing
+	{Print endl}
+
+
+// draw spaces, car, and finish line
+spaces_before_car(car_position)
+Print "\\-o-1-o-"
+for (int j = 50 j >= car_position j--)
+{
+Print " "
+}
+Print "\\"
+Print endl
+
+// draw car 2
+spaces_before_car(car2_position)
+Print "\\-o-2-o-"
+for (int j = 50 j >= car2_position j--)
+{
+Print " "
+}
+Print "\\"
+Print endl
+delay() 
+}
+
+double current_cash = points()
+cash = 25 * GetRand(1,level_car2)
+
+if (car_position > car2_position){
+	set_money(current_cash + (cash * 3))
+	Print "YOU WON AND GOT " & cash * 3 & "$" } 
+else {
+	set_money(current_cash + cash)
+	Print "YOU LOST BUT GOT " & cash & "$ FOR PARTICIPATING" }
+// end if
+
+Print endl & "YOU NOW HAVE " & points() & "$" & endl
+
+pausey()
+} // end of race()
+
+
+
+void delay()
+{
+  for (int m = 0 m <= 17 m++){ Print "\r\n"} // lines to skip and clear
+  for (int j = 0 j <= 999999 j++){
+    for  (int k = 0 k <= 50 k++){ }} // (k <= num) = speed from 10 to 100  
+} // end of delay()
+
+
+void spaces_before_car(int car_position)
+{
+	for (int spaces = 0 spaces <= car_position spaces++) { // spaces before car
+	
+		Print " " }}
+	
+// end of spaces_before_car()
+
+
+
+void upgrade(double money) {
+double  parts_cost[4]  = {50,100,150,200}
+
+clear()
+
+Print "YOUR MONEY TOTAL IS $" & money & endl & endl  
+
+  int car1_parts[4]
+  ifstream infile
+  infile.open("upgrades.txt")
+  bool all_upgraded = true
+  string part_desc[4] = {"ENGINE", "TRANSMISSION", "TIRES", "DIFFERENTIAL"}
+  for (int i = 0 i <= 3 i++)
+  {
+      infile >> car1_parts[i]
+      if (car1_parts[i] < 3)
+      { all_upgraded = false }
+  }  
+  infile.close()
+
+int part
+  // choose part to upgrade
+  if (all_upgraded == true)
+  { Print "ALL PARTS UPGRADED!" & endl }
+  
+  else
+  {
+    do {
+      // clear()
+      Print endl & "---------" & endl
+	  infile.open("upgrades.txt")
+      for (int i = 0 i <= 3 i++) {
+		
+		infile >> car1_parts[i]
+		Print "UPGRADE LEVEL OF " & part_desc[i] & " IS " & car1_parts[i] & endl		
+		Print "ENTER " & i & " TO UPGRADE " & part_desc[i] & endl & endl}
+	  infile.close()
+      
+	 for (int i = 1 i <= 3 i++)
+         { Print "COST TO UPGRADE A PART TO LEVEL " & i & " IS $" & parts_cost[i] & endl }
+    
+	   
+	  
+	  
+      Print "CHOOSE PART TO UPGRADE (-1 TO GO BACK): "
+      
+      Read part
+      clear()
+Print "YOUR MONEY TOTAL IS $" & money & endl & endl      
+      if (part != -1) {
+      if (car1_parts[part] == 3) {
+	Print "THAT PART HAS ALREADY BEEN UPGRADED" }
+      else {
+	if (parts_cost[car1_parts[part]] > money) {Print "NOT ENOUGH MONEY FOR THAT PART" & endl cin.get()}
+	else {
+	  money -= parts_cost[car1_parts[part]]
+	  set_money(money)
+	  car1_parts[part] += 1	  
+	  
+	  // save upgrades to file
+	    ofstream outi
+	    outi.open("upgrades.txt", ios::out)
+	    for (int i = 0 i <= 3 i++)
+	    { outi & car1_parts[i] & endl }
+	    outi.close()}}}}
+    while (part != -1)}
+} // end of upgrade()
+
+
+
+
+int upgrade_level()
+
+
+int upgrade_level()
+{
+  int parts[4]
+  string info =""
+  int level = 0
+  ifstream infile
+  infile.open("upgrades.txt")
+
+for (int i = 0 i <= 3 i++)
+{
+  infile >> parts[i]
+  level +=  parts[i]
+}  
+ infile.close()
+ if (level == 0) {level = 1}
+return level
+} // end of upgrade_level()
+
+// to use : GetRand(two values here)
+
+// receives two numbers
+// and returns a random number between those two numbers
+
+
+int GetRand(int, int)
+
+
+int GetRand(int minimum, int maximum)
+{
+	int num = 0
+	srand(time(NULL))
+	num = minimum + rand() % (maximum - minimum + 1)
+	if (num == 0) {num = 1}
+	return num
+} // end of GetRand()
+
+
+double points()
+{
+double mymoney
+ifstream infile
+  
+  infile.open("money.txt")
+  infile >> mymoney
+  infile.close()
+return mymoney
+}
+
+
+
+void set_money(double cash)
+{
+ofstream outi
+outi.open("money.txt")
+outi & cash
+outi.close()
+}
+
+
+output

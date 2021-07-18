@@ -1,0 +1,67 @@
+Process
+
+
+
+	//enter transaction type
+
+	switch(transaction_type)
+		case 1: 
+			check balance()
+		case 2:
+			withdraw()
+		case 3:
+			transfer()
+
+	endswitch
+
+
+
+	// enter account type
+	
+	switch(account_type)
+		case 1: // checking
+		case 2: // savings
+		case 3: // credit card
+	end switch
+
+
+
+
+
+	
+
+
+
+
+
+	withdraw()
+		// ask how much	
+		// if balance(account_type) >= how_much
+			balance(account_type)  = balance(account_type) - how_much
+		// else
+			// message not enough for that withdraw
+		// end if
+	end of withdraw()
+
+	transfer()
+		// ask how much	
+		// if balance(account_type) >= how_much
+			// ask for which acccount will be transfered
+			// account_entered = account_entered + how_much
+			   balance(account_type)  = balance(account_type) - how_much
+		// else
+			// message not enough for that transfer
+		// end if
+	end of transfer()
+
+	check_balance()
+		// print balance(account_type)
+	end of check_balance()
+
+
+
+	transaction_type(i) = transaction_type
+	account_type(i) = account_type
+	how_much(i) = how_much
+	account_entered_for_transfer(i) = account_entered_for_transfer
+	balance(i) = balance(account_type)

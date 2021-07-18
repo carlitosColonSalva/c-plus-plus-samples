@@ -1,0 +1,99 @@
+Print "ENTER NUMBER VALUE OF CARD: "
+Read choice
+
+clear()
+
+Print "1 FOR SQUARE" & endl
+Print "2 FOR CIRCLE" & endl
+Print "3 FOR TRIANGLE" & endl
+Print "4 FOR RECTANGLE" & endl
+Print "ENTER NUMBER THAT REPRESENTS ICON: "
+Read icon
+
+clear()
+
+draw(choice,icon)
+
+
+
+cin.get()
+// end of main
+
+Sub draw(int num, int icon)
+
+
+	if num <= 9 then
+		letter = num + 48
+	else
+		switch (num)
+			case 10:
+			letter = '0'
+
+			case 11:
+			letter = 'J'
+			
+			case 12:
+			letter = 'Q'
+			
+			case 13:
+			letter = 'k'
+		End switch
+	End if
+
+switch (icon)
+
+	case 1:
+	obj = '-'
+
+	case 2:
+	obj = 'o'
+
+	case 3:
+	obj = '<'
+
+	case 4:
+	obj = '='
+end switch
+
+OpenFile("drawing.txt",infile)
+
+
+ReadLine(infile,drawing, '#')
+Print drawing & endl
+
+
+ReadLine(infile,drawing,'#')
+drawing1 = drawing
+ReadLine(infile,drawing,'#')
+drawing2 = drawing
+ReadLine(infile,drawing,'#')
+drawing3 = drawing
+
+Print drawing1 & obj & drawing2 & obj & drawing3 & endl
+
+ReadLine(infile,drawing,'#')
+drawing1 = drawing
+ReadLine(infile,drawing,'#')
+drawing2 = drawing
+
+Print drawing1 & letter & drawing2 & endl
+
+
+ReadLine(infile,drawing,'#')
+drawing1 = drawing
+ReadLine(infile,drawing,'#')
+drawing2 = drawing
+ReadLine(infile,drawing,'#')
+drawing3 = drawing
+
+Print drawing1 & obj & drawing2 & obj & drawing3 & endl
+
+
+
+ReadLine(infile,drawing,'#')
+Print drawing & endl
+
+FileClose(infile)
+
+
+End Sub Draw

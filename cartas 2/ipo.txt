@@ -1,0 +1,64 @@
+Input
+	Read choice
+	Read icon
+
+Process
+
+	Print "ENTER NUMBER VALUE OF CARD: "
+	Read choice
+
+	clear()
+
+
+	Print "1 for square" && endl
+	Print "2 for circle" && endl
+	Print "3 for triangle" && endl
+	Print "4 for rectangle" && endl
+	Print "ENTER NUMBER THAT REPRESENTS ICON: "
+	Read icon
+
+	if choice <= 9 then
+		letter = choice + 48;
+	else
+		switch (choice)
+			case 10:
+			letter = '0';
+
+
+			case 11:
+			letter = 'J';
+
+
+			case 12:
+			letter = 'Q';
+
+
+			case 13:
+			letter = 'k';
+		End switch
+
+switch (icon)
+	case 1:
+	obj = '-';
+
+
+	case 2:
+	obj = 'o';
+
+
+	case 3:
+	obj = '<';
+
+
+	case 4:
+	obj = '=';
+
+End Switch
+
+Output
+	drawing
+	drawing1
+	drawing2
+	drawing3
+	letter
+	obj

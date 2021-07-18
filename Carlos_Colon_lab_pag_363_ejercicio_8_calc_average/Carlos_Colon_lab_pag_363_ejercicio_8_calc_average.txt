@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+double CalcAverage(double, double, double, double);
+
+
+
+
+void main()
+{
+double 
+num1 = 0,
+num2 = 0,
+num3 = 0,
+num4 = 0,
+quotient = 0;
+
+
+cout << endl << "enter number 1: ";
+cin >> num1;
+
+cout << endl << "enter number 2: ";
+cin >> num2;
+
+cout << endl << "enter number  3: ";
+cin >> num3;
+
+cout << endl << "enter number 4: ";
+cin >> num4;
+
+system("cls");
+quotient = CalcAverage(num1, num2, num3, num4);
+cout << "average is: " << quotient << endl << endl;
+
+system("pause");
+}
+
+
+double CalcAverage(double num1, double num2, double num3, double num4)
+{
+	
+	double average = 0;
+	average = (num1 + num2 + num3 + num4) / 4;
+	return average;
+}

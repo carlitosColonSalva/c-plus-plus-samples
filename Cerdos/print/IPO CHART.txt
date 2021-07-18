@@ -1,0 +1,177 @@
+IPO Chart
+
+Input
+	farm_name
+	owner_name
+	pigs_quantity
+	pigs_type
+	pigs_traits
+	appearance
+
+
+Process
+
+
+int pigs_type[pigs_quantity]
+string pigs_appearance[pigs_quantity]
+double pigs_traits[pigs_quantity][2] // weight and length
+pigs_price[pigs_quantity]
+pigs_total = 0
+int appearance
+
+
+
+i = 0
+
+repeat until i = pigs_quantity
+{
+PRINT  "----------------------------------------------------" 
+  
+  PRINT "RECOPILANDO INFORMACIÓN DEL CERDO " & i + 1
+  
+
+PRINT endl & "----------------------------------------------------"
+PRINT "TIPOS DEL CERDO: "
+PRINT "	ENTRA 1		SI EL CERDO PESA MENOS DE 50 LIBRAS Y EL LARGO ES  ENTRE 24 Y 32 PULGADAS"
+PRINT "	ENTRA 2		SI EL CERDO PESA MENOS DE 75 LIBRAS, PESA MAS DE 49 LIBRAS Y SU LARGO ES ENTRE 33 Y 48 PULGADAS"
+PRINT "	ENTRA 3		SI EL CERDO PESA MAS DE 75 LIBRAS Y EL LARGO ES MAYOR DE 48 PULGADAS"
+PRINT "TIPO DEL CERDO " & i + 1 & ": "
+READ pigs_type[i]
+
+PRINT endl & endl & "--------------" & endl
+
+PRINT endl & "ENTRA LAS LIBRAS QUE PESA EL CERDO " & i + 1 & ": "
+READ pigs_traits[pigs_quantity][0]
+
+
+PRINT endl & "ENTRA LAS PULGADAS DEL CERDO " & i + 1 & ": "
+READ pigs_traits[pigs_quantity][1]
+
+
+
+PRINT endl & endl & "-------------" & endl
+PRINT "LA APARIENCIA DEL CERDO ES:" & endl & "1	DELGADO" & endl & "2	GRUESO" & endl & "3	OBESO"
+PRINT endl & "APARIENCIA DEL CERDO " & i + 1& " ES: "
+READ appearance
+
+pigs_appearance[i] = get_appearance(appearance)
+
+
+pigs_price[i] = pig_price(pigs_type[i] appearance)
+
+pigs_total += pigs_price[i]
+
+
+PRINT endl & "------------" & endl
+
+ PRINT endl & "PRECIO  DEL CERDO " & i + 1 & " ES: $" & pigs_price[i]
+
+
+i = i + 1
+} // END OF FOR PIGS INFORMATION
+
+
+
+// PRINT info
+PRINT endl & "-------------------------------------------------------------------------" & endl
+PRINT "TOTAL DE VALOR DE TODOS LOS CERDOS EN LA GRANJA ES $" & pigs_total
+
+
+double pig_price(int pig_type, int pig_appearance){
+  double pig_price
+				switch (pig_type) {
+						case 1:
+						  switch (pig_appearance)
+						  {
+						    
+						    case 1:
+						      pig_price = 3.50
+						      
+						      
+						    case 2:
+						      pig_price = 3.00
+						      
+
+						    case 3:
+						      pig_price = 2.15
+						      
+						      
+						  }
+						
+
+						case 2:
+						 switch (pig_appearance)
+						  {
+						    
+						    case 1:
+						      pig_price = 3.75
+						      
+						      
+						    case 2:
+						      pig_price = 2.50
+						      
+
+						    case 3:
+						      pig_price = 2.05
+						      
+						      
+						  }
+						  
+
+						case 3:
+						 switch (pig_appearance)
+						  {
+						    
+						    case 1:
+						      pig_price = 4.50
+						      
+						      
+						    case 2:
+						      pig_price = 2.00
+						      
+
+						    case 3:
+						      pig_price = 1.75
+						      
+						      
+						  }
+						  
+
+					} // end of pig type
+
+return pig_price
+}// end of function pig_price()
+
+
+
+string get_appearance(int choice)
+			{
+			string appearance
+
+			switch(choice)
+			{
+			case 1:
+			appearance = "LEAN"
+			
+
+			case 2:
+			appearance = "GRUESO"
+			
+
+			case 3:
+			appearance = "OBESO"
+			
+			} // end of choice case
+
+		return appearance
+		} // end of function get_appearance()
+
+
+
+
+
+
+
+Output
+	pigs_price
+	pigs_total

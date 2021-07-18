@@ -1,0 +1,4 @@
+This program doesn't have a user manual because this program was just made to be included in a program for cards.
+
+This program would be included as a function.
+Instead of the inputs in this program, the values will be received from the main function.

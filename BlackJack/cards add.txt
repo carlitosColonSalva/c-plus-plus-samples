@@ -1,0 +1,25 @@
+
+generate main array of all letters
+
+
+
+ask how many players;
+
+
+
+
+make an array for each player to store every card
+
+
+
+make array that stores the final result of each player;
+
+
+
+
+
+
+
+
+
+

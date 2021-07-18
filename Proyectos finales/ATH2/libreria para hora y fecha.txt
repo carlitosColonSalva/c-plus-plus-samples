@@ -1,0 +1,4 @@
+include ctime
+// use:
+some_int = clock();
+// this returns an int;
